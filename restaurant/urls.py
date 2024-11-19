@@ -1,7 +1,7 @@
-#define URL route for index() view
 from django.urls import path
-from django.contrib import admin
+from .views import MenuItemView, MenuItemDetailView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('menu/', MenuItemView.as_view(), name='menu_items'),  # List and create items
+    path('menu/<int:pk>/', MenuItemDetailView.as_view(), name='menu_item_detail'),  # Detail view for a single item
 ]
