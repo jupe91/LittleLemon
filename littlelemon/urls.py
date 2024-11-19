@@ -31,5 +31,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Admin URL
     path('restaurant/', include('restaurant.urls')),  # Include restaurant app URLs
     path('restaurant/booking/', include(router.urls)),  # Include the booking API URLs
-    path('api/', include('LittleLemonAPI.urls')),
+    path('api/', include('LittleLemonAPI.urls')),  # Include other API URLs
+    # Djoser authentication routes
+    path('auth/', include('djoser.urls')),  # Registration and user management
+    path('auth/', include('djoser.urls.authtoken')),  # Token-based authentication
 ]
